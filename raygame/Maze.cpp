@@ -61,6 +61,11 @@ Maze::Tile Maze::createTile(int x, int y, TileKey key)
 		tile.actor = new Wall(position.x, position.y);
 		addActor(tile.actor);
 		break;
+	case TileKey::SUMMONER:
+		tile.cost = 1.0f;
+		tile.actor = new Summoner::Character(position.x, position.y, 100.0f, 25);
+		addActor(tile.actor);
+		break;
 	case TileKey::GHOST:
 		tile.cost = 1.0f;
 		Ghost* ghost = new Ghost(position.x, position.y, 200.0f, 0xFF6666FF, this);

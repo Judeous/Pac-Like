@@ -165,11 +165,13 @@
     <ClCompile Include="Actor.cpp" />
     <ClCompile Include="Agent.cpp" />
     <ClCompile Include="Behavior.cpp" />
+    <ClCompile Include="Character.cpp" />
     <ClCompile Include="Game.cpp" />
     <ClCompile Include="Ghost.cpp" />
     <ClCompile Include="KeyboardBehavior.cpp" />
     <ClCompile Include="main.cpp" />
     <ClCompile Include="Maze.cpp" />
+    <ClCompile Include="Minion.cpp" />
     <ClCompile Include="NodeGraph.cpp" />
     <ClCompile Include="Pac.cpp" />
     <ClCompile Include="PathfindBehavior.cpp" />
@@ -178,16 +180,19 @@
     <ClCompile Include="SeekBehavior.cpp" />
     <ClCompile Include="SeekPathBehavior.cpp" />
     <ClCompile Include="Sprite.cpp" />
+    <ClCompile Include="Summoner.cpp" />
     <ClCompile Include="Wall.cpp" />
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="Actor.h" />
     <ClInclude Include="Agent.h" />
     <ClInclude Include="Behavior.h" />
+    <ClInclude Include="Character.h" />
     <ClInclude Include="Game.h" />
     <ClInclude Include="Ghost.h" />
     <ClInclude Include="KeyboardBehavior.h" />
     <ClInclude Include="Maze.h" />
+    <ClInclude Include="Minion.h" />
     <ClInclude Include="NodeGraph.h" />
     <ClInclude Include="Pac.h" />
     <ClInclude Include="PathfindBehavior.h" />
@@ -196,6 +201,7 @@
     <ClInclude Include="SeekBehavior.h" />
     <ClInclude Include="SeekPathBehavior.h" />
     <ClInclude Include="Sprite.h" />
+    <ClInclude Include="Summoner.h" />
     <ClInclude Include="Wall.h" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />

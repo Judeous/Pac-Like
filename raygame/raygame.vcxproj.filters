@@ -15,6 +15,12 @@
       <UniqueIdentifier>{4FC737F1-C7A5-4376-A066-2A32D752A2FF}</UniqueIdentifier>
       <Extensions>cpp;c;cc;cxx;def;odl;idl;hpj;bat;asm;asmx</Extensions>
     </Filter>
+    <Filter Include="SummonerAssessment Header">
+      <UniqueIdentifier>{1f1f10c8-2de5-4605-bcdf-49459585b13f}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="SummonnerAssessment Source">
+      <UniqueIdentifier>{e6e07c0c-40dc-4d50-ac26-9035e3638503}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="Sprite.cpp">
@@ -68,6 +74,15 @@
     <ClCompile Include="PathfindBehavior.cpp">
       <Filter>Engine Source Files</Filter>
     </ClCompile>
+    <ClCompile Include="Summoner.cpp">
+      <Filter>SummonnerAssessment Source</Filter>
+    </ClCompile>
+    <ClCompile Include="Character.cpp">
+      <Filter>SummonnerAssessment Source</Filter>
+    </ClCompile>
+    <ClCompile Include="Minion.cpp">
+      <Filter>SummonnerAssessment Source</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="Game.h">
@@ -117,6 +132,15 @@
     </ClInclude>
     <ClInclude Include="PathfindBehavior.h">
       <Filter>Engine Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="Summoner.h">
+      <Filter>SummonerAssessment Header</Filter>
+    </ClInclude>
+    <ClInclude Include="Character.h">
+      <Filter>SummonerAssessment Header</Filter>
+    </ClInclude>
+    <ClInclude Include="Minion.h">
+      <Filter>SummonerAssessment Header</Filter>
     </ClInclude>
   </ItemGroup>
 </Project>

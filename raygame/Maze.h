@@ -4,6 +4,7 @@
 #include "Wall.h"
 #include "Pac.h"
 #include "Ghost.h"
+#include "Summoner.h"
 #include <Vector2.h>
 
 /// <summary>
@@ -20,7 +21,7 @@ public:
 	enum class TileKey {
 		OPEN,
 		WALL,
-		MUD,
+		SUMMONER,
 		GHOST
 	};
 

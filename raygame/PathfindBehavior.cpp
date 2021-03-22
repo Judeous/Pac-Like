@@ -3,10 +3,6 @@
 
 void PathfindBehavior::update(Agent* owner, float deltaTime)
 {
-	//Don't update if disabled or no target
-	if (!getEnabled() || !m_target)
-		return;
-
 	//Find the positions and tiles of the owner and target
 	MathLibrary::Vector2 ownerPosition = owner->getWorldPosition();
 	MathLibrary::Vector2 destinationPosition = findDestination(owner);
@@ -61,6 +57,6 @@ void PathfindBehavior::updatePath(Agent* owner, MathLibrary::Vector2 destination
 	NodeGraph::Node* ownerNode = m_maze->getTile(owner->getWorldPosition()).node;
 	NodeGraph::Node* targetNode = m_maze->getTile(destination).node;
 	m_path = NodeGraph::findPath(ownerNode, targetNode);
-	if (!m_path.empty()) m_path.pop_front();
+	//if (!m_path.empty()) m_path.pop_front();
 	m_needPath = false;
 }

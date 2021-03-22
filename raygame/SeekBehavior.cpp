@@ -4,10 +4,6 @@
 
 void SeekBehavior::update(Agent* owner, float deltaTime)
 {
-	//Don't update if disabled or no target
-	if (!getEnabled() || !m_target)
-		return;
-
 	MathLibrary::Vector2 position = owner->getWorldPosition();
 	MathLibrary::Vector2 destination = m_target->getWorldPosition();
 
