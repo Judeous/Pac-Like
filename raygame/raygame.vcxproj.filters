@@ -15,11 +15,17 @@
       <UniqueIdentifier>{4FC737F1-C7A5-4376-A066-2A32D752A2FF}</UniqueIdentifier>
       <Extensions>cpp;c;cc;cxx;def;odl;idl;hpj;bat;asm;asmx</Extensions>
     </Filter>
-    <Filter Include="SummonerAssessment Header">
+    <Filter Include="SummonerAssessment Actor Headers">
       <UniqueIdentifier>{1f1f10c8-2de5-4605-bcdf-49459585b13f}</UniqueIdentifier>
     </Filter>
-    <Filter Include="SummonnerAssessment Source">
+    <Filter Include="SummonnerAssessment Actor Source">
       <UniqueIdentifier>{e6e07c0c-40dc-4d50-ac26-9035e3638503}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="SummonerAssessment Behavior Headers">
+      <UniqueIdentifier>{e24f0b8e-f852-44f4-aa50-88cb4a1f6382}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="SummonerAssessment Behavior Source">
+      <UniqueIdentifier>{08d42bac-7d37-4a98-bf04-f9d19f550b7a}</UniqueIdentifier>
     </Filter>
   </ItemGroup>
   <ItemGroup>
@@ -75,13 +81,28 @@
       <Filter>Engine Source Files</Filter>
     </ClCompile>
     <ClCompile Include="Summoner.cpp">
-      <Filter>SummonnerAssessment Source</Filter>
+      <Filter>SummonnerAssessment Actor Source</Filter>
     </ClCompile>
     <ClCompile Include="Character.cpp">
-      <Filter>SummonnerAssessment Source</Filter>
+      <Filter>SummonnerAssessment Actor Source</Filter>
     </ClCompile>
     <ClCompile Include="Minion.cpp">
-      <Filter>SummonnerAssessment Source</Filter>
+      <Filter>SummonnerAssessment Actor Source</Filter>
+    </ClCompile>
+    <ClCompile Include="DazedBehavior.cpp">
+      <Filter>SummonerAssessment Behavior Source</Filter>
+    </ClCompile>
+    <ClCompile Include="SteeringBehavior.cpp">
+      <Filter>SummonerAssessment Behavior Source</Filter>
+    </ClCompile>
+    <ClCompile Include="LimitedEvadeBehavior.cpp">
+      <Filter>SummonerAssessment Behavior Source</Filter>
+    </ClCompile>
+    <ClCompile Include="OrbitBehavior.cpp">
+      <Filter>SummonerAssessment Behavior Source</Filter>
+    </ClCompile>
+    <ClCompile Include="ShieldBehavior.cpp">
+      <Filter>SummonerAssessment Behavior Source</Filter>
     </ClCompile>
   </ItemGroup>
   <ItemGroup>
@@ -134,13 +155,28 @@
       <Filter>Engine Header Files</Filter>
     </ClInclude>
     <ClInclude Include="Summoner.h">
-      <Filter>SummonerAssessment Header</Filter>
+      <Filter>SummonerAssessment Actor Headers</Filter>
     </ClInclude>
     <ClInclude Include="Character.h">
-      <Filter>SummonerAssessment Header</Filter>
+      <Filter>SummonerAssessment Actor Headers</Filter>
     </ClInclude>
     <ClInclude Include="Minion.h">
-      <Filter>SummonerAssessment Header</Filter>
+      <Filter>SummonerAssessment Actor Headers</Filter>
+    </ClInclude>
+    <ClInclude Include="DazedBehavior.h">
+      <Filter>SummonerAssessment Behavior Headers</Filter>
+    </ClInclude>
+    <ClInclude Include="SteeringBehavior.h">
+      <Filter>SummonerAssessment Behavior Headers</Filter>
+    </ClInclude>
+    <ClInclude Include="LimitedEvadeBehavior.h">
+      <Filter>SummonerAssessment Behavior Headers</Filter>
+    </ClInclude>
+    <ClInclude Include="OrbitBehavior.h">
+      <Filter>SummonerAssessment Behavior Headers</Filter>
+    </ClInclude>
+    <ClInclude Include="ShieldBehavior.h">
+      <Filter>SummonerAssessment Behavior Headers</Filter>
     </ClInclude>
   </ItemGroup>
 </Project>
