@@ -1,4 +1,6 @@
 #include "Scene.h"
+#include "Minion.h"
+#include "Summoner.h"
 
 Scene::Scene()
 {
@@ -8,6 +10,39 @@ Scene::Scene()
 MathLibrary::Matrix3* Scene::getWorld()
 {
     return m_world;
+}
+
+std::vector<Minion*> Scene::getMinions()
+{
+    std::vector<Minion*> minions;
+    for (int i = 0; i < m_actors.size(); i++)
+    {
+        Minion* minion = dynamic_cast<Minion*>(m_actors[i]);
+        if (minion)
+            minions.push_back(minion);
+    }
+    return minions;
+}
+
+std::vector<Summoner*> Scene::getSummoners()
+{
+    std::vector<Summoner*> summoners;
+    for (int i = 0; i < m_actors.size(); i++)
+    {
+        Summoner* summoner = dynamic_cast<Summoner*>(m_actors[i]);
+        if (summoner)
+            summoners.push_back(summoner);
+    }
+    return summoners;
+}
+
+Summoner* Scene::getEnemySummoner(Summoner* currentSummoner)
+{
+    std::vector<Summoner*> summoners = getSummoners();
+    for (int i = 0; i < summoners.size(); i++)
+        if (summoners[i] != currentSummoner)
+            return summoners[i];
+    return nullptr;
 }
 
 void Scene::addActor(Actor* actor)
@@ -30,7 +65,7 @@ bool Scene::removeActor(Actor* actor)
     if (actor == nullptr) return false;
     for (int i = 0; i < m_actors.size(); i++)
     {
-        if (m_actors[i] = actor) {
+        if (m_actors[i] == actor) {
             m_actors.erase(m_actors.begin() + i);
             return true;
         }

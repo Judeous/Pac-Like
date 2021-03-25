@@ -2,6 +2,9 @@
 #include "Actor.h"
 #include <vector>
 
+class Minion;
+class Summoner;
+
 class Scene
 {
 public:
@@ -12,6 +15,18 @@ public:
 
     /// <returns>The scenes matrix that represents the world transform.</returns>
     MathLibrary::Matrix3* getWorld();
+
+    /// <returns>m_actors</returns>
+    std::vector<Actor*> getActors() { return m_actors; }
+    
+    /// <returns>All Actors that are Minions</returns>
+    std::vector<Minion*> getMinions();
+
+    /// <returns>All Actors that are Summoners</returns>
+    std::vector<Summoner*> getSummoners();
+
+    /// <returns>The passed in Summoner's enemy</returns>
+    Summoner* getEnemySummoner(Summoner* currentSummoner);
 
     /// <summary>
     /// Adds the given actor to the array of actors so that the scene may call its update and drawGraph functions.

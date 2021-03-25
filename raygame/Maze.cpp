@@ -2,16 +2,16 @@
 
 Maze::Maze(TileKey map[Maze::HEIGHT][Maze::WIDTH])
 {
-	//Create the player
-	m_player = new Pac(
-		WIDTH / 2 * TILE_SIZE + (TILE_SIZE / 2),
-		HEIGHT / 2 * TILE_SIZE + (TILE_SIZE / 2),
-		200
-	);
+	//Don't create the player
+	//m_player = new Pac(
+	//	WIDTH / 2 * TILE_SIZE + (TILE_SIZE / 2),
+	//	HEIGHT / 2 * TILE_SIZE + (TILE_SIZE / 2),
+	//	200
+	//);
 	//Generate the map
 	generate(map);
-	//Add the player to the scene
-	addActor(m_player);
+	//Don't add the player to the scene
+	//addActor(m_player);
 }
 
 Maze::~Maze()
@@ -63,7 +63,7 @@ Maze::Tile Maze::createTile(int x, int y, TileKey key)
 		break;
 	case TileKey::SUMMONER:
 		tile.cost = 1.0f;
-		tile.actor = new Summoner::Character(position.x, position.y, 100.0f, 25);
+		tile.actor = new Summoner(position.x, position.y);
 		addActor(tile.actor);
 		break;
 	case TileKey::GHOST:
