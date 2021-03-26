@@ -9,8 +9,6 @@ class Minion : public Character
 public:
 	Minion(float x, float y, Summoner* master);
 
-	void update(float deltaTime);
-	void setTarget(Character* target) override;
 	Summoner* getMaster() { return m_masterSummoner; }
 
 private:
@@ -30,7 +28,6 @@ private:
 	/// </summary>
 	void giveTeam();
 private:
-	Character* m_currentTarget;
 	Summoner* m_masterSummoner;
 	Summoner* m_enemySummoner;
 	std::vector<Minion*> m_allyMinions;

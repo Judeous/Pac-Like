@@ -177,6 +177,7 @@
     <ClCompile Include="OrbitBehavior.cpp" />
     <ClCompile Include="Pac.cpp" />
     <ClCompile Include="PathfindBehavior.cpp" />
+    <ClCompile Include="Projectile.cpp" />
     <ClCompile Include="PursuePathBehavior.cpp" />
     <ClCompile Include="Scene.cpp" />
     <ClCompile Include="SeekBehavior.cpp" />
@@ -203,6 +204,7 @@
     <ClInclude Include="OrbitBehavior.h" />
     <ClInclude Include="Pac.h" />
     <ClInclude Include="PathfindBehavior.h" />
+    <ClInclude Include="Projectile.h" />
     <ClInclude Include="PursuePathBehavior.h" />
     <ClInclude Include="Scene.h" />
     <ClInclude Include="SeekBehavior.h" />
@@ -213,6 +215,10 @@
     <ClInclude Include="DazedBehavior.h" />
     <ClInclude Include="Summoner.h" />
     <ClInclude Include="Wall.h" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="..\AIAssessment.md" />
+    <None Include="..\TechDoc.md" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">

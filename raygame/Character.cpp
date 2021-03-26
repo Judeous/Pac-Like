@@ -7,7 +7,7 @@ Character::Character()
 { }
 
 Character::Character(float x, float y, float speed, int health)
-	: Agent(x, y, Maze::TILE_SIZE / 2.5f, speed, speed, (int)0x00009900)
+	: Agent(x, y, Maze::TILE_SIZE / 2.5f, speed, speed, (int)0xFFFF00FF)
 {
 	m_health = health;
 }
@@ -16,9 +16,4 @@ void Character::update(float deltaTime)
 {
 	m_timeSinceAttack -= deltaTime;
 	Agent::update(deltaTime);
-}
-
-void Character::setTarget(Character* target)
-{
-	
 }

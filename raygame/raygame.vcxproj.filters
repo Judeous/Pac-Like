@@ -104,6 +104,9 @@
     <ClCompile Include="ShieldBehavior.cpp">
       <Filter>SummonerAssessment Behavior Source</Filter>
     </ClCompile>
+    <ClCompile Include="Projectile.cpp">
+      <Filter>Engine Source Files</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="Game.h">
@@ -178,5 +181,12 @@
     <ClInclude Include="ShieldBehavior.h">
       <Filter>SummonerAssessment Behavior Headers</Filter>
     </ClInclude>
+    <ClInclude Include="Projectile.h">
+      <Filter>Engine Header Files</Filter>
+    </ClInclude>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="..\AIAssessment.md" />
+    <None Include="..\TechDoc.md" />
   </ItemGroup>
 </Project>

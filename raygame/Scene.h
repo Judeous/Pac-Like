@@ -1,6 +1,6 @@
 #pragma once
-#include "Actor.h"
 #include <vector>
+#include "Character.h"
 
 class Minion;
 class Summoner;
@@ -18,6 +18,9 @@ public:
 
     /// <returns>m_actors</returns>
     std::vector<Actor*> getActors() { return m_actors; }
+
+    /// <returns>All Actors that are Characters</returns>
+    std::vector<Character*> getCharacters();
     
     /// <returns>All Actors that are Minions</returns>
     std::vector<Minion*> getMinions();

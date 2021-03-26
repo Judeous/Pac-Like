@@ -1,12 +1,14 @@
 #include "Summoner.h"
 #include "Minion.h"
-#include "DazedBehavior.h"
 #include "Game.h"
+#include "DazedBehavior.h"
+#include "ShieldBehavior.h"
+#include "SeekBehavior.h"
+#include "OrbitBehavior.h"
 
-Summoner::Summoner(float x, float y)
-	: Character(x, y, getMaxSpeed(), m_health)
+Summoner::Summoner(float x, float y) : Character(x, y, getMaxSpeed(), m_health)
 {
-    m_enemySummoner = Game::getInstance()->getCurrentScene()->getEnemySummoner(this);
+	m_target = nullptr;
 }
 
 void Summoner::update(float deltaTime)
@@ -16,14 +18,29 @@ void Summoner::update(float deltaTime)
 	Character::update(deltaTime);
 }
 
-void Summoner::setTarget(Character* target)
-{
-	m_enemySummoner = dynamic_cast<Summoner*>(target);
-}
-
 void Summoner::summon()
 {
-	Minion* minion = new Minion(getWorldPosition().x, getWorldPosition().y, this);
+	//Create Minions
+	Minion* defenderMinion = new Minion(getWorldPosition().x, getWorldPosition().y, this);
+	Minion* warriorMinion = new Minion(getWorldPosition().x, getWorldPosition().y, this);
+	Minion* casterMinion = new Minion(getWorldPosition().x, getWorldPosition().y, this);
+
+	//Create Behaviors for the Minions
 	DazedBehavior* dazed = new DazedBehavior(3);
-	minion->addBehavior(dazed);
+	ShieldBehavior* shield = new ShieldBehavior(this);
+	SeekBehavior* seek = new SeekBehavior();
+	OrbitBehavior* orbit = new OrbitBehavior(m_target);
+	
+	//Give the Minions the Behaviors
+	defenderMinion->addBehavior(dazed);
+	defenderMinion->addBehavior(shield);
+	warriorMinion->addBehavior(dazed);
+	warriorMinion->addBehavior(seek);
+	casterMinion->addBehavior(dazed);
+	casterMinion->addBehavior(orbit);
+	
+	//Add Minions to the current Scene
+	Game::getInstance()->getCurrentScene()->addActor(defenderMinion);
+	Game::getInstance()->getCurrentScene()->addActor(warriorMinion);
+	Game::getInstance()->getCurrentScene()->addActor(casterMinion);
 }

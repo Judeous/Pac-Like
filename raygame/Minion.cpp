@@ -6,19 +6,11 @@
 Minion::Minion(float x, float y, Summoner* master) : Character(x, y, getMaxSpeed(), m_health)
 {
     m_masterSummoner = master;
+    //Get a random direction for DazedBehavior
     setForward(MathLibrary::Vector2(sin(rand()), cos(rand())).getNormalized());
+    //Assign Team variables
     getTeams();
     giveTeam();
-}
-
-void Minion::update(float deltaTime)
-{
-	Character::update(deltaTime);
-}
-
-void Minion::setTarget(Character* target)
-{
-    m_currentTarget = target;
 }
 
 void Minion::getTeams()

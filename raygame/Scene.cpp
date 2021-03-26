@@ -12,6 +12,18 @@ MathLibrary::Matrix3* Scene::getWorld()
     return m_world;
 }
 
+std::vector<Character*> Scene::getCharacters()
+{
+    std::vector<Character*> characters;
+    for (int i = 0; i < m_actors.size(); i++)
+    {
+        Character* character = dynamic_cast<Character*>(m_actors[i]);
+        if (character)
+            characters.push_back(character);
+    }
+    return characters;
+}
+
 std::vector<Minion*> Scene::getMinions()
 {
     std::vector<Minion*> minions;
