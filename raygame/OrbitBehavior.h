@@ -8,6 +8,5 @@ public:
 	void setTarget(Character* target) { m_target = target; }
 
 private:
-	float angle;
 	Character* m_target;
 };

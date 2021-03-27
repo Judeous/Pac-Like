@@ -11,6 +11,6 @@ public:
 
 private:
 	MathLibrary::Vector2 m_direction;
-	float spawnedTimer = 2.0f;
-	float timeSinceSpawn = 0;
+	float m_spawnedTimer = 2.0f;
+	float m_timeSinceSpawn = 0;
 };

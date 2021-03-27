@@ -4,14 +4,14 @@
 DazedBehavior::DazedBehavior(float timer)
 {
 	m_direction = MathLibrary::Vector2(cos(rand()), sin(rand())).getNormalized();
-	spawnedTimer = timer;
+	m_spawnedTimer = timer;
 }
 
 void DazedBehavior::update(Agent* owner, float deltaTime)
 {
 	owner->applyForce(m_direction / 2);
 
-	timeSinceSpawn += deltaTime;
-	if (timeSinceSpawn >= spawnedTimer)
+	m_timeSinceSpawn += deltaTime;
+	if (m_timeSinceSpawn >= m_spawnedTimer)
 		setEnabled(false);
 }

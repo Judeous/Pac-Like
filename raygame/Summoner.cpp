@@ -8,7 +8,11 @@
 
 Summoner::Summoner(float x, float y) : Character(x, y, getMaxSpeed(), m_health)
 {
-	m_target = nullptr;
+	Summoner* enemy = Game::getInstance()->getCurrentScene()->getEnemySummoner(this);
+	if (enemy)
+		m_target = enemy;
+	else
+		m_target = nullptr;
 }
 
 void Summoner::update(float deltaTime)
