@@ -3,7 +3,7 @@
 #include "Summoner.h"
 #include <Vector2.h>
 
-Minion::Minion(float x, float y, Summoner* master) : Character(x, y, getMaxSpeed(), m_health)
+Minion::Minion(float x, float y, Summoner* master) : Character(x, y, getMaxSpeed(), m_health, 32 / 2.5f)
 {
     m_masterSummoner = master;
     //Get a random direction for DazedBehavior

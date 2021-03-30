@@ -4,7 +4,7 @@ class Character : public Agent
 {
 public:
     Character();
-    Character(float x, float y, float speed, int health);
+    Character(float x, float y, float speed, int health, float collRadius, int color = (int)0xFFFF00FF);
     void update(float deltaTime) override;
 
     int takeDamage(int damage) { return m_health -= damage; }

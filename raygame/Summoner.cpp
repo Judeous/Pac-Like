@@ -6,7 +6,7 @@
 #include "SeekBehavior.h"
 #include "OrbitBehavior.h"
 
-Summoner::Summoner(float x, float y) : Character(x, y, getMaxSpeed(), m_health)
+Summoner::Summoner(float x, float y) : Character(x, y, getMaxSpeed(), m_health, 32 / 2.0f)
 {
 	Summoner* enemy = Game::getInstance()->getCurrentScene()->getEnemySummoner(this);
 	if (enemy)
