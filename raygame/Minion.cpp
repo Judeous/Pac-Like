@@ -2,15 +2,28 @@
 #include "Game.h"
 #include "Summoner.h"
 #include <Vector2.h>
+#include "DazedBehavior.h"
 
-Minion::Minion(float x, float y, Summoner* master) : Character(x, y, getMaxSpeed(), m_health, 32 / 2.5f)
+Minion::Minion(float x, float y, float speed, Summoner* master) : Character(x, y, speed, m_health, 32 / 3.0f)
 {
     m_masterSummoner = master;
+}
+
+void Minion::start()
+{
     //Get a random direction for DazedBehavior
     setForward(MathLibrary::Vector2(sin(rand()), cos(rand())).getNormalized());
+
+    //Create a DazedBehavior
+    DazedBehavior* dazed = new DazedBehavior(3);
+    addBehavior(dazed);
+
     //Assign Team variables
     getTeams();
     giveTeam();
+
+    //Find a target
+    findTarget();
 }
 
 void Minion::getTeams()
@@ -54,4 +67,28 @@ void Minion::giveTeam()
     {
         minions[i]->pushTeam(this);
     }
+}
+
+bool Minion::findTarget()
+{
+    //If no enemies exist
+    if (!m_enemyMinions.empty())
+    {
+        for (int i = 0; i < m_enemyMinions.size(); i++)
+        {
+            //If the current Minion isn't targeted
+            if (!m_enemyMinions[i]->getTargeted())
+            {
+                setTarget(m_enemyMinions[i]);
+                return true;
+            }
+        }
+    }
+    //Otherwise if the enemy Summoner isn't null
+    else if (m_enemySummoner)
+    {
+        setTarget(m_enemySummoner);
+        return true;
+    }
+    return false;
 }

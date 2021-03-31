@@ -8,6 +8,7 @@ std::deque<NodeGraph::Node*> NodeGraph::findPath(Node* start, Node* end)
 	path.push_back(start);
 	path.push_back(start);
 	path.push_back(end);
+	//Put A*
 	return path;
 }
 

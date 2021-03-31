@@ -7,8 +7,8 @@ class Summoner;
 class Minion : public Character
 {
 public:
-	Minion(float x, float y, Summoner* master);
-
+	Minion(float x, float y, float speed, Summoner* master);
+	void start() override;
 	Summoner* getMaster() { return m_masterSummoner; }
 
 private:
@@ -27,6 +27,12 @@ private:
 	/// Gives the Minions in the current Scene the team this Minion is on
 	/// </summary>
 	void giveTeam();
+
+	/// <summary>
+	/// Finds a target in m_enemyMinions to target
+	/// </summary>
+	/// <returns>Whether or not a target was found</returns>
+	bool findTarget();
 private:
 	Summoner* m_masterSummoner;
 	Summoner* m_enemySummoner;

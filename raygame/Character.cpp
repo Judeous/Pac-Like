@@ -14,6 +14,6 @@ Character::Character(float x, float y, float speed, int health, float collRadius
 
 void Character::update(float deltaTime)
 {
-	m_timeSinceAttack -= deltaTime;
+	m_timeSinceAttack += deltaTime;
 	Agent::update(deltaTime);
 }
