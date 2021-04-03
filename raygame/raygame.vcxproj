@@ -218,6 +218,8 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="..\AIAssessment.md" />
+    <None Include="..\AIREADME.md" />
+    <None Include="..\BehaviorPlanAnalysis.md" />
     <None Include="..\TechDoc.md" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />

@@ -11,7 +11,7 @@ public:
     int dealDamage(int damage, Character* target) { return target->takeDamage(damage); }
     int getHealth() { return m_health; }
 
-    virtual void setTarget(Character* target) { m_target = target; m_target->setTargeted(true); }
+    virtual void setTarget(Character* target);
     virtual Character* getTarget() { return m_target; }
 
     bool getDefended() { return m_defended; }

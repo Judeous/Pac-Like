@@ -18,6 +18,8 @@ namespace NodeGraph
 		MathLibrary::Vector2 position;
 
 		float gScore;
+		float fScore;
+		float hScore;
 		Node* previous;
 
 		std::vector<Edge> connections;
@@ -31,6 +33,14 @@ namespace NodeGraph
 	/// <param name="end">The destination node</param>
 	/// <returns>A deque storing the found path</returns>
 	std::deque<Node*> findPath(Node* start, Node* end);
+
+	/// <summary>
+	/// 
+	/// </summary>
+	/// <param name="list">The list to check for the node</param>
+	/// <param name="node">The Node to look for</param>
+	/// <returns></returns>
+	bool contains(std::deque<Node*> list, Node* node);
 
 	/// <summary>
 	/// Draw the entire graph. Currently has very poor performance.

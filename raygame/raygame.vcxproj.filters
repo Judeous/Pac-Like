@@ -188,5 +188,7 @@
   <ItemGroup>
     <None Include="..\AIAssessment.md" />
     <None Include="..\TechDoc.md" />
+    <None Include="..\AIREADME.md" />
+    <None Include="..\BehaviorPlanAnalysis.md" />
   </ItemGroup>
 </Project>

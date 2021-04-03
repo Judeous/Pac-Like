@@ -60,9 +60,10 @@ public:
 	/// <param name="behavior"></param>
 	void addBehavior(Behavior* behavior);
 
+	std::vector<Behavior*> getBehaviors() { return m_behaviorList; }
+
 private:
 	std::vector<Behavior*> m_behaviorList;
-
 	MathLibrary::Vector2 m_force = { 0, 0 };
 	float m_maxForce;
 };

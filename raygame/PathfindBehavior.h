@@ -29,6 +29,7 @@ public:
 	/// </summary>
 	/// <param name="owner">The Agent to which this Behavior belongs</param>
 	void updatePath(Agent* owner);
+
 	/// <summary>
 	/// Update the current path to the given destination.
 	/// This is called by update(Agent*,float).

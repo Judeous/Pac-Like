@@ -1,0 +1,14 @@
+Title
+-----
+- OrbitBehavior
+  - Wanted it to orbit the target while within a minimum and maximum range
+  - It worked
+- ShieldBehavior
+  - Wanted it to stand between target and target's target
+  - Did not test
+- LimitedEvadeBehavior
+  - Wanted it to evade up to a certain distance
+    - Did not test
+- DazedBehavior
+  - Wanted it to move forwards slowly for a certain amount of time then disable itself
+  - Does not move slowly

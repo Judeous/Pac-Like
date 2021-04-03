@@ -5,9 +5,11 @@
 #include "SeekPathBehavior.h"
 #include "OrbitBehavior.h"
 
-Summoner::Summoner(float x, float y, float speed, Maze* maze) : Character(x, y, speed, m_health, 32 / 2.0f)
+Summoner::Summoner(float x, float y, float speed, Maze* maze)
+	: Character(x, y, speed, m_health, 32 / 2.0f)
 {
 	m_maze = maze;
+	m_attackCoolDown = 3;
 }
 
 void Summoner::start()
@@ -35,24 +37,10 @@ void Summoner::update(float deltaTime)
 void Summoner::summon()
 {
 	//Create Minions
-	//Minion* defenderMinion = new Minion(getWorldPosition().x, getWorldPosition().y, 250.0f, this);
-	Minion* warriorMinion = new Minion(getWorldPosition().x, getWorldPosition().y, 250.0f, this);
-	Minion* warriorMinion2 = new Minion(getWorldPosition().x, getWorldPosition().y, 250.0f, this);
-	Minion* warriorMinion3 = new Minion(getWorldPosition().x, getWorldPosition().y, 250.0f, this);
-	//Minion* casterMinion = new Minion(getWorldPosition().x, getWorldPosition().y, 250.0f, this);
+	Minion* warriorMinion = new Minion(getWorldPosition().x, getWorldPosition().y, 250.0f, this, m_maze);
+	Minion* warriorMinion2 = new Minion(getWorldPosition().x, getWorldPosition().y, 250.0f, this, m_maze);
+	Minion* warriorMinion3 = new Minion(getWorldPosition().x, getWorldPosition().y, 250.0f, this, m_maze);
 
-	//Create Behaviors for the Minions
-	//ShieldBehavior* shield = new ShieldBehavior(this);
-	SeekPathBehavior* seekPath = new SeekPathBehavior(m_maze);
-	//OrbitBehavior* orbit = new OrbitBehavior(m_target);
-	
-	//Give the Minions the Behaviors
-	//defenderMinion->addBehavior(shield);
-	warriorMinion->addBehavior(seekPath);
-	warriorMinion2->addBehavior(seekPath);
-	warriorMinion3->addBehavior(seekPath);
-	//casterMinion->addBehavior(orbit);
-	
 	//Add Minions to the current Scene
 	Game::getInstance()->getCurrentScene()->addActor(warriorMinion);
 	Game::getInstance()->getCurrentScene()->addActor(warriorMinion2);
