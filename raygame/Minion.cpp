@@ -23,7 +23,7 @@ void Minion::start()
 
     //Add behaviors
     addBehavior(dazed);
-    addBehavior(seekPath);
+    //addBehavior(seekPath);
 
     //Assign Team variables
     //Give the Already existing Minions your team
